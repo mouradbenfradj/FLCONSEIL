@@ -1,0 +1,10 @@
+vich_uploader:
+    db_driver: orm
+
+    mappings:
+        logo_images:
+            uri_prefix: '%app.path.logo_images%'
+            upload_destination: '%kernel.project_dir%/public/%app.path.logo_images%'
+        carouel_images:
+            uri_prefix: '%app.path.carousel_images%'
+            upload_destination: '%kernel.project_dir%/public/%app.path.carousel_images%'

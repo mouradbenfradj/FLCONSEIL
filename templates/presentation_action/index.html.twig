@@ -1,0 +1,71 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello PresentationActionController!{% endblock %}
+
+{% block body %}
+    {% for article in articles %}
+    <section class="ftco-section">
+        <div class="container">
+            <div class="row d-flex">
+                {#<div class="col-md-5 order-md-last wrap-about align-items-stretch">
+                    <div class="wrap-about-border">
+                        <div class="img" style="background-image: url(images/about.jpg); border"></div>
+                        <div class="text">
+                            <h3>Read Our Success Story for Inspiration</h3>
+                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+                            <p><a href="#" class="btn btn-primary py-3 px-4">Contact us</a></p>
+                        </div>
+                    </div>
+                </div>#}
+                <div class="col-md-12 wrap-about pr-md-4 ftco-animate">
+                    <h2 class="mb-4 animated bounce infinite">{{article.titre|raw}}</h2>
+                    <p class="animated fadeInDown">{{article.contenu|raw}}</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    {% endfor %}
+
+    <section class="ftco-section">
+        <div class="container">
+            <div class="row justify-content-center mb-5 pb-2">
+                <div class="col-md-8 text-center heading-section ftco-animate">
+                    <h2 class="mb-4">Activity</h2>
+                    <p></p>
+                </div>
+            </div>
+            <div class="row no-gutters">
+                <div class="col-lg-4 d-flex">
+                    <div class="services-2 noborder-left text-center ftco-animate">
+                        <div class="icon mt-2 d-flex justify-content-center align-items-center"><span
+                                    class="flaticon-analysis"></span></div>
+                        <div class="text media-body">
+                            <h3>Support in All Quality activities</h3>
+                            <p>Projects Quality , Customer Quality , Supplier Quality , Product Quality</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 d-flex">
+                    <div class="services-2 text-center ftco-animate">
+                        <div class="icon mt-2 d-flex justify-content-center align-items-center"><span
+                                    class="flaticon-business"></span></div>
+                        <div class="text media-body">
+                            <h3>Support in Engineering activities</h3>
+                            <p>in all domains</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 d-flex">
+                    <div class="services-2 text-center ftco-animate">
+                        <div class="icon mt-2 d-flex justify-content-center align-items-center"><span
+                                    class="flaticon-insurance"></span></div>
+                        <div class="text media-body">
+                            <h3>Support in Logistic activities</h3>
+                            <p>Supply Chain , Sorting , Rework</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
