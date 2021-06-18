@@ -22,11 +22,19 @@ class MenuBuilder
     public function createMainMenu(array $options): ItemInterface
     {
         $menu = $this->factory->createItem('root');
-
-        $menu->addChild('Home', ['route' => 'homepage']);
-        $menu->addChild('Présentation et champ d\'actions', ['route' => 'presentation_action']);
-        $menu->addChild('Références', ['route' => 'referance']);
-        $menu->addChild('Contact', ['route' => 'contact_new']);
+        $menu->setChildrenAttribute('class', 'navbar-nav mr-auto');
+        $menu->addChild('Home', ['route' => 'homepage'])
+            ->setAttribute('class','nav-item')
+            ->setLinkAttribute('class', "nav-link pl-0");
+        $menu->addChild('Présentation et champ d\'actions', ['route' => 'presentation_action'])
+            ->setAttribute('class','nav-item')
+            ->setLinkAttribute('class', "nav-link");
+        $menu->addChild('Références', ['route' => 'referance'])
+            ->setAttribute('class','nav-item')
+            ->setLinkAttribute('class', "nav-link");
+        $menu->addChild('Contact', ['route' => 'contact_new'])
+            ->setAttribute('class','nav-item')
+            ->setLinkAttribute('class', "nav-link");
         // ... add more children
 
         return $menu;

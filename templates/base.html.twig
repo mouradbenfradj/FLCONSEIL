@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="{{ app.request.locale }}">
 <head>
     <meta charset="UTF-8">
     <title>{% block title %}Welcome!{% endblock %}</title>
@@ -32,7 +32,7 @@
 
     {% block javascripts %}
 
-        <script src="{{ asset('https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false') }}"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
 
         {{ encore_entry_script_tags('app') }}
     {% endblock %}
@@ -43,7 +43,7 @@
         <div class="container">
             <div class="row no-gutters d-flex align-items-center align-items-stretch">
                 <div class="col-md-4 d-flex align-items-center py-4">
-                    <a class="navbar-brand" href="index.html">FL CONSEIL</a>
+                    <a class="navbar-brand" href="{{ path('homepage')}}">FL CONSEIL</a>
                 </div>
                 <div class="col-lg-8 d-block">
                     <div class="row d-flex">
@@ -100,8 +100,7 @@
                 {{ knp_menu_render('main') }}
                 {#<ul class="navbar-nav mr-auto">
                     <li class="nav-item active"><a href="{{ path('homepage')}}" class="nav-link pl-0">Home</a></li>
-                    <li class="nav-item"><a href="{{ path('presentation_action') }}" class="nav-link">Présentation et
-                            champ d'actions</a>
+                    <li class="nav-item"><a href="{{ path('presentation_action') }}" class="nav-link">Présentation et champ d'actions</a>
                     </li>
                     <li class="nav-item"><a href="{{ path('referance')}}" class="nav-link">Références</a></li><!--
 	        	<li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
@@ -211,7 +210,7 @@
                 <div class="col-md-12 text-center">
 
                     <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                        </p>
+                    </p>
                 </div>
             </div>
         </div>
