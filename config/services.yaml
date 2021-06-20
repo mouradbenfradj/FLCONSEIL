@@ -30,3 +30,10 @@ services:
         arguments: ["@knp_menu.factory"]
         tags:
             - { name: knp_menu.menu_builder, method: createMainMenu, alias: main } # The alias is what is used to retrieve the menu
+
+    app.bottombar_menu:
+        class: Knp\Menu\MenuItem
+        factory: ["@app.menu_builder", createBottombarMenu]
+        arguments: ["@request_stack"]
+        tags:
+            - { name: knp_menu.menu, alias: bottombar } # Named "bottombar" this time

@@ -1,6 +1,9 @@
 twig:
     default_path: '%kernel.project_dir%/templates'
-
+    globals:
+        societer: 'FL CONSEIL'
+        emails:  ['contact@flconseil.org','flconseil@outlook.com']
+        phones:  ['+ 216 29 920 450','+ 216 93 641 973']
 when@test:
     twig:
         strict_variables: true

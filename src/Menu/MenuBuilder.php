@@ -6,6 +6,7 @@ namespace App\Menu;
 
 use Knp\Menu\FactoryInterface;
 use Knp\Menu\ItemInterface;
+use Symfony\Component\HttpFoundation\RequestStack;
 
 class MenuBuilder
 {
@@ -36,6 +37,31 @@ class MenuBuilder
             ->setAttribute('class','nav-item')
             ->setLinkAttribute('class', "nav-link");
         // ... add more children
+
+        return $menu;
+    }
+
+
+    public function createBottombarMenu(RequestStack $requestStack)
+    {
+        $menu = $this->factory->createItem('bottombar');
+        $menu->setChildrenAttribute('class', 'list-unstyled');
+        $menu->addChild('Home', ['route' => 'homepage'])
+            ->setAttribute('icon', 'ion-ios-arrow-round-forward mr-2')
+            //->setAttribute('class','nav-item')
+            /*->setLinkAttribute('class', "nav-link pl-0")*/;
+        $menu->addChild('Présentation et champ d\'actions', ['route' => 'presentation_action'])
+            ->setAttribute('icon', 'ion-ios-arrow-round-forward mr-2')
+            /* ->setAttribute('class','nav-item')
+                     ->setLinkAttribute('class', "nav-link")*/;
+        $menu->addChild('Références', ['route' => 'referance'])
+            ->setAttribute('icon', 'ion-ios-arrow-round-forward mr-2')
+            /*->setAttribute('class','nav-item')
+                     ->setLinkAttribute('class', "nav-link")*/;
+        $menu->addChild('Contact', ['route' => 'contact_new'])
+            ->setAttribute('icon', 'ion-ios-arrow-round-forward mr-2')
+            /*->setAttribute('class','nav-item')
+                   ->setLinkAttribute('class', "nav-link")*/;
 
         return $menu;
     }

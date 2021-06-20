@@ -43,7 +43,7 @@
         <div class="container">
             <div class="row no-gutters d-flex align-items-center align-items-stretch">
                 <div class="col-md-4 d-flex align-items-center py-4">
-                    <a class="navbar-brand" href="{{ path('homepage')}}">FL CONSEIL</a>
+                    <a class="navbar-brand" href="{{ path('homepage') }}">{{ societer }}</a>
                 </div>
                 <div class="col-lg-8 d-block">
                     <div class="row d-flex">
@@ -52,8 +52,9 @@
                                         class="icon-paper-plane"></span></div>
                             <div class="text">
                                 <span>Email</span>
-                                <span>contact@flconseil.org</span>
-                                <span>flconseil@outlook.com</span>
+                                {% for email in emails %}
+                                    <span> {{ email }}</span>
+                                {% endfor %}
                             </div>
                         </div>
                         <div class="col-md d-flex topper align-items-center align-items-stretch py-md-4">
@@ -61,8 +62,9 @@
                                         class="icon-phone2"></span></div>
                             <div class="text">
                                 <span>Call</span>
-                                <span>+ 216 29 920 450</span>
-                                <span>+ 216 93 641 973</span>
+                                {% for phone in phones %}
+                                    <span> {{ phone }}</span>
+                                {% endfor %}
                             </div>
                         </div>
                         <div class="col-md topper d-flex align-items-center justify-content-end">
@@ -130,15 +132,22 @@
                         <div class="block-23 mb-3">
                             <ul>
                                 <li><span class="icon icon-map-marker"></span><span class="text">Rue Jean-Jacques Rousseau Centre Babel Bloc A 1073 Monplaisir Tunis TUNISIA</span>
-                                </li>
+                                </li>{% for phone in phones %}
                                 <li><a href="#"><span class="icon icon-phone"></span><span
+                                                class="text"> {{ phone }}</span></a></li>
+                                {% endfor %}
+                                {#<li><a href="#"><span class="icon icon-phone"></span><span
                                                 class="text">93 641 973</span></a></li>
                                 <li><a href="#"><span class="icon icon-phone"></span><span
-                                                class="text">29 920 450</span></a></li>
-                                <li><a href="#"><span class="icon icon-envelope"></span><span class="text">contact@flconseil.org</span></a>
+                                                class="text">29 920 450</span></a></li>#}
+                                {% for email in emails %}
+                                    <li><a href="#"><span class="icon icon-envelope"></span><span class="text">{{ email }}</span></a>
+                                    </li>
+                                {% endfor %}
+                                {#<li><a href="#"><span class="icon icon-envelope"></span><span class="text">contact@flconseil.org</span></a>
                                 </li>
                                 <li><a href="#"><span class="icon icon-envelope"></span><span class="text">flconseil@outlook.com</span></a>
-                                </li>
+                                </li>#}
                             </ul>
                         </div>
                     </div>
@@ -173,6 +182,8 @@
                 <div class="col-md-6 col-lg-3">
                     <div class="ftco-footer-widget mb-5 ml-md-4">
                         <h2 class="ftco-heading-2">Links</h2>
+                        {{ knp_menu_render('bottombar') }}
+{#
                         <ul class="list-unstyled">
                             <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>Home</a></li>
                             <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>Présentation
@@ -183,7 +194,7 @@
                                                     <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>Projects</a></li>
                                                     <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>Contact</a></li>
                             -->
-                        </ul>
+                        </ul>#}
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-3">
