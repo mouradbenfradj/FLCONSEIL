@@ -1,0 +1,15 @@
+{
+  "entrypoints": {
+    "app": {
+      "js": [
+        "/build/runtime.js",
+        "/build/vendors-node_modules_googlemaps_js-api-loader_dist_index_esm_js-node_modules_aos_dist_aos_js--6f7417.js",
+        "/build/app.js"
+      ],
+      "css": [
+        "/build/vendors-node_modules_googlemaps_js-api-loader_dist_index_esm_js-node_modules_aos_dist_aos_js--6f7417.css",
+        "/build/app.css"
+      ]
+    }
+  }
+}
